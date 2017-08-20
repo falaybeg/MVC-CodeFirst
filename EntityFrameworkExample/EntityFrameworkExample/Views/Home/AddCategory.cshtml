@@ -1,0 +1,25 @@
+﻿@model EntityFrameworkExample.Models.Category
+@{
+    ViewBag.Title = "AddCategory";
+}
+
+<h2>AddCategory</h2>
+<br /><br />
+
+<form action="@Url.Action("AddCategory", "Home")" method="post" >
+  
+    <div class="form-horizontal">
+
+        <div class="form-group">
+            <label class = "control-label col-md-2">Category: </label>
+            <div class="col-md-10">
+                <input type="text" name="CategoryName" class="form-control" />
+            </div>
+        </div>
+
+        <div class="col-md-offset-4 col-md-12">
+            <input type="submit" value="Create" class="btn btn-success" />
+        </div>
+    </div>
+</form>
+
