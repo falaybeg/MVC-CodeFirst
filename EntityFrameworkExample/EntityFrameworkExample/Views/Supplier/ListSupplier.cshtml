@@ -1,0 +1,35 @@
+﻿@model IEnumerable<EntityFrameworkExample.Models.Supplier>
+
+@{
+    ViewBag.Title = "ListSupplier";
+}
+
+<center>
+    <h2 style="background-color: dimgray; color:white">Supplier List</h2>
+</center><hr />
+
+<a href="@Url.Action("AddSupplier","Supplier")" class="btn btn-primary">New Supplier</a>
+
+<table class="table table-hover table-bordered col-md-10">
+
+    <thead>
+        <tr>
+        <th><label>Supplier Name</label></th>
+            <th>Address</th>
+            <th><label>Phone</label></th>
+            <th><label>City</label></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Address</td>
+                <td>@item.Phone</td>
+                <td>@item.City.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>
