@@ -19,6 +19,7 @@ namespace EntityFrameworkExample.Models
         public DbSet<Order> Order { get; set; }
         public DbSet<Product> Product { get; set; }
         public DbSet<Supplier> Supplier { get; set; }
+        public DbSet<City> City { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

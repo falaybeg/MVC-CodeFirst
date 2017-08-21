@@ -17,27 +17,39 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Product Manager", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Product
+                          <b>Product</b> 
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="@Url.Action("AddProduct","Home")">Add Product</a>
-                           
+                            <a class="dropdown-item" href="@Url.Action("AddProduct","Product")">Add Product</a><br />
+
+                            <a class="dropdown-item" href="@Url.Action("ListProduct","Product")">List Product</a>
+
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Category
+                            <b>Category</b> 
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="@Url.Action("AddCategory","Home")">Add Category</a>
-                            <br /><a class="dropdown-item" href="@Url.Action("ShowCategory","Home")">Show Category</a>
+                            <a class="dropdown-item" href="@Url.Action("AddCategory","Category")">Add Category</a>
+                            <br /><a class="dropdown-item" href="@Url.Action("ShowCategory","Category")">Show Category</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <b>Supplier</b> 
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="@Url.Action("AddSupplier","Supplier")">New Supplier</a><br/>
+                            <a class="dropdown-item" href="@Url.Action("ListSupplier","Supplier")">List Supplier</a>
+
                         </div>
                     </li>
                 </ul>

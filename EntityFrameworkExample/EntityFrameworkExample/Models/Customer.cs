@@ -19,6 +19,7 @@ namespace EntityFrameworkExample.Models
         [Required]
         [StringLength(15)]
         public string Phone { get; set; }
+
         public string Email { get; set; }
     }
 }
