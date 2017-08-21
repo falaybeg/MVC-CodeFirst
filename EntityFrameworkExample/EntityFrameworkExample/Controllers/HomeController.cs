@@ -13,8 +13,6 @@ namespace EntityFrameworkExample.Controllers
 
         public ActionResult Index()
         {
-
-            
             return View();
         }
 
@@ -57,37 +55,35 @@ namespace EntityFrameworkExample.Controllers
         [HttpGet]
         public ActionResult AddProduct()
         {
-            var supplier = db.Supplier.ToList().Select(c => new SelectListItem
-            {
-                Selected = false,
-                Text = c.Name,
-                Value = c.Id.ToString()
-            }).ToList();
-            ViewBag.Supplier = supplier;
+            List<Supplier> supplier = db.Supplier.ToList();
+            ViewBag.Supplier = new SelectList(supplier, "Id", "Name");
 
-            var category = db.Category.ToList().Select(c => new SelectListItem
-            {
-                Selected = false,
-                Text = c.CategoryName,
-                Value = c.Id.ToString()
-            }).ToList();
-            ViewBag.Category = category;
-
-           
-
-            //ViewBag.Category = new SelectList(db.Category, "Id", "CategoryName");
-            //ViewBag.Supplier = new SelectList(db.Supplier, "Id", "Name");
-
+            List<Category> category = db.Category.ToList();
+            ViewBag.Category = new SelectList(category, "Id", "CategoryName");
 
             return View();
+
         }
         [HttpPost]
-        public ActionResult AddProduct(Product pro)
+        public ActionResult AddProduct(ProductViewModel model)
         {
+            Product prod = new Product();
+            prod.Name = model.Name;
+            prod.Stock = model.Stock;
+            prod.SupplierId = model.SupplierId;
+            prod.CategoryId = model.CategoryId;
 
-            db.Product.Add(pro);
+            db.Product.Add(prod);
             db.SaveChanges();
-            return View();
+          
+              return RedirectToAction("Index");
         }
+
+        public ActionResult liste()
+        {
+            return View(db.Product.ToList());
+        }
+
+      
     }
 }

@@ -15,9 +15,9 @@ namespace EntityFrameworkExample.Models
         public string Name { get; set; }
         [Required]
         public int Stock { get; set; }
-        [Required]
+       
         public int SupplierId { get; set; }
-        [Required]
+     
         public int CategoryId { get; set; }
 
         public virtual Supplier Supplier { get; set; }

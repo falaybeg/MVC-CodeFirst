@@ -1,4 +1,4 @@
-﻿@model EntityFrameworkExample.Models.Product
+﻿@model EntityFrameworkExample.Models.ProductViewModel
 
 @{
     ViewBag.Title = "AddProduct";
@@ -6,7 +6,7 @@
 
 <h2>AddProduct</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("AddProduct","Home", FormMethod.Post)) 
 {
     @Html.AntiForgeryToken()
     
@@ -31,37 +31,20 @@
         </div>
 
         <div class="form-group">
-            <label class="control-label col-md-2">Supplier Name</label>
+            @Html.LabelFor(model => model.SupplierId, "SupplierId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
+              @Html.DropDownListFor(model=>model.SupplierId, ViewBag.Supplier as SelectList, "--Select--", new { @class = "form-control" })
                 
-
-               @*@Html.DropDownList("Supplier", ViewData["Supplier"] as IEnumerable<SelectListItem>)*@
-
-
-
-                @*@Html.DropDownList("SupplierId", (IEnumerable<SelectListItem>)ViewBag.Supplier, new { @class = "form-control" })*@
-              
+                @Html.ValidationMessageFor(model => model.SupplierId, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-           <label class = "control-label col-md-2">Category Name</label>
-            <div class="col-md-10 ">
-                @*@Html.DropDownList("Category", (List<SelectListItem>)ViewBag.Category)*@
-                @*@Html.DropDownList("Category", ViewData["Category"] as IEnumerable<SelectListItem>)*@
+            @Html.LabelFor(model => model.CategoryId, "CategoryId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+              @Html.DropDownListFor(model => model.CategoryId, ViewBag.Category as SelectList, "--Select--", new { @class = "form-control" })
 
-
-       
-             @Html.DropDownList("CategoryId", new SelectList(@ViewBag.Category, "Id", "CategoryName"))
-
-
-
-
-
-   @*@Html.DropDownList("CategoryId", (IEnumerable<SelectListItem>)ViewBag.Category, new { @class = "form-control" })*@
-
-
-                @Html.ValidationMessageFor(model => model.CategoryId)
+                @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
             </div>
         </div>
 
