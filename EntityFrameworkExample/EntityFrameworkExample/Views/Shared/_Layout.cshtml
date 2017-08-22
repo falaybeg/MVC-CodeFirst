@@ -73,14 +73,15 @@
            
         </div>
     </div>
-    <div class="container body-content" >
-        @RenderBody()
-        <br /><hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Stock Managenement System</p>
-        </footer>
-    </div>
-
+  
+        <div class="container body-content">
+            @RenderBody()
+            <br /><hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Stock Managenement System</p>
+            </footer>
+        </div>
+  
     @RenderSection("scripts", required: false)
 </body>
 </html>
