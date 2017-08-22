@@ -40,7 +40,7 @@ namespace EntityFrameworkExample.Controllers
             db.Product.Add(prod);
             db.SaveChanges();
 
-            return RedirectToAction("Index");
+            return RedirectToAction("ListProduct");
         }
 
         public ActionResult ListProduct()

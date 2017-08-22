@@ -27,7 +27,7 @@ namespace EntityFrameworkExample.Controllers
             Supplier supplier = new Supplier();
             supplier.Name = model.Name;
             supplier.Address = model.Address;
-           supplier.Phone = model.Phone;
+            supplier.Phone = model.Phone;
             supplier.CityId = model.CityId; 
 
             db.Supplier.Add(supplier);
@@ -39,6 +39,16 @@ namespace EntityFrameworkExample.Controllers
         {
             var list = db.Supplier.ToList();
             return View(list);
+        }
+
+        public ActionResult DeleteSupplier(int id)
+        {
+            Supplier delete = new Supplier();
+            delete = db.Supplier.Find(id);
+            db.Supplier.Remove(delete);
+            db.SaveChanges();
+
+            return RedirectToAction("ListSupplier");
         }
     }
 }

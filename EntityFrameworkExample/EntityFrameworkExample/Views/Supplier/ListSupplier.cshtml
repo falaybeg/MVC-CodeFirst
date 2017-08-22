@@ -8,19 +8,21 @@
     <h2 style="background-color: dimgray; color:white">Supplier List</h2>
 </center><hr />
 
-<a href="@Url.Action("AddSupplier","Supplier")" class="btn btn-primary">New Supplier</a>
+<a href="@Url.Action("AddSupplier","Supplier")" class="btn btn-success" > <i class="glyphicon glyphicon-plus"></i>
+<span><b>New Supplier</b></span></a>
+<br />
+<table class="table table-hover table-bordered">
 
-<table class="table table-hover table-bordered col-md-10">
-
-    <thead>
+    <thead style="background-color:lightgray; font-size:15px">
         <tr>
-        <th><label>Supplier Name</label></th>
+        <th style="width: 200px"><label>Supplier Name</label></th>
             <th>Address</th>
             <th><label>Phone</label></th>
             <th><label>City</label></th>
+            <th></th>
         </tr>
     </thead>
-
+    
     <tbody>
         @foreach (var item in Model)
         {
@@ -29,7 +31,29 @@
                 <td>@item.Address</td>
                 <td>@item.Phone</td>
                 <td>@item.City.Name</td>
+                <td style="width:180px">
+                    <a href="@Url.Action()" class="btn btn-warning"><i class="glyphicon glyphicon-edit">
+                           </i><span>&nbsp;&nbsp;&nbsp;Edit</span></a>
+                    <a href="@Url.Action()" class="btn btn-danger">
+                        <i class="glyphicon glyphicon-trash">
+                        </i><span> Delete</span>
+                    </a>
+                    @*<a href="" class="btn btn-danger" id="delete">Delete</a>*@
+                </td>
             </tr>
+
         }
     </tbody>
 </table>
+
+<script>
+
+    $(document).ready(function () {
+
+        $("button").click(function () {
+
+            alert("Supplier Id: " + $(this).attr('id'));
+        });
+
+    });
+</script>
