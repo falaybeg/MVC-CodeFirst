@@ -45,6 +45,7 @@ namespace EntityFrameworkExample.Controllers
 
         public ActionResult ListProduct()
         {
+            db.Configuration.LazyLoadingEnabled = false;
             return View(db.Product.ToList());
         }
     }

@@ -139,3 +139,4 @@ C:\Users\furkan.alaybeg\Desktop\MVC-CodeFirst\EntityFrameworkExample\EntityFrame
 C:\Users\furkan.alaybeg\Desktop\MVC-CodeFirst\EntityFrameworkExample\EntityFrameworkExample\obj\Debug\EntityFrameworkExample.dll
 C:\Users\furkan.alaybeg\Desktop\MVC-CodeFirst\EntityFrameworkExample\EntityFrameworkExample\obj\Debug\EntityFrameworkExample.pdb
 C:\Users\furkan.alaybeg\Desktop\MVC-CodeFirst\EntityFrameworkExample\EntityFrameworkExample\obj\Debug\EntityFrameworkExample.csprojResolveAssemblyReference.cache
+C:\Users\furkan.alaybeg\Desktop\MVC-CodeFirst\EntityFrameworkExample\EntityFrameworkExample\obj\Debug\EntityFrameworkExample.csproj.CoreCompileInputs.cache
