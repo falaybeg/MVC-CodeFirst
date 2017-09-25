@@ -41,10 +41,10 @@ namespace EntityFrameworkExample.Controllers
             return View(list);
         }
 
-        public ActionResult DeleteSupplier(int id)
+        public ActionResult DeleteSupplier(int Id)
         {
             Supplier delete = new Supplier();
-            delete = db.Supplier.Find(id);
+            delete = db.Supplier.Find(Id);
             db.Supplier.Remove(delete);
             db.SaveChanges();
 
