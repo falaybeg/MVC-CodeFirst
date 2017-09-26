@@ -45,8 +45,22 @@ namespace EntityFrameworkExample.Controllers
 
         public ActionResult ListProduct()
         {
-            db.Configuration.LazyLoadingEnabled = false;
-            return View(db.Product.ToList());
+            //db.Configuration.LazyLoadingEnabled = false;
+            var data = db.Product.ToList();
+            return View(data);
         }
+
+        [HttpPost]
+        public JsonResult DeleteProduct(int Id)
+        {
+            Product p = db.Product.Find(Id);
+            if (p != null)
+            {
+                db.Product.Remove(p);
+                db.SaveChanges();
+            }
+            return Json(p,JsonRequestBehavior.AllowGet);
+        } 
+
     }
 }
